@@ -12,22 +12,55 @@
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Podaj numer dnia tygodnia: <input type="number" id="dzientyg">
 	</label>
 	
-	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
+	<input type="submit" value="Wybierz dzien" onclick="getDayName()">
 
 	<div id="wynik"></div>
 	
 	<script>
-	
 		function getDayName()
 		{
-					
-			
+			var dzientyg = document.getElementById("dzientyg").value;
+                	var wynik = document.getElementById("wynik");
+                	if(dzientyg==1)
+                	{ 
+                    		wynik.innerHTML="Pierszy dzień tygodnia to Monday - poniedzialek";
+                	}
+                	else if(dzientyg==2)
+                	{
+                    		wynik.innerHTML="Drugi dzień tygodnia to Tuesday - wtorek";
+                	}
+                	else if(dzientyg==3)
+                	{
+                	    wynik.innerHTML="Trzeci dzień tygodnia to Wedneday - środa";
+                	}
+                	else if(dzientyg==4)
+                	{
+                    		wynik.innerHTML="Czwarty dzień tygodnia to Thursday - czwartek";
+	                }
+                	else if(dzientyg==5)
+                	{
+                    		wynik.innerHTML="Piaty dzień tygodnia to Friday - piątek, piąteczek, piątunio";
+                    		document.getElementById("wynik").style.color="yellow";
+                	}
+                	else if(dzientyg==6)
+                	{
+                    		wynik.innerHTML="Szósty dzień tygodnia to Saturday - sobota";
+                    		document.getElementById("wynik").style.color="green";
+                	}
+                	else if(dzientyg==7)
+                	{
+                   	 	wynik.innerHTML="Pierwszy dzień tygodnia to Sunday - niedziela";
+                    		document.getElementById("wynik").style.color="green";
+                	}
+                	else
+                	{
+                    		wynik.innerHTML="To nie jest prawidłowy numer tygodnia!";
+                   		document.getElementById("wynik").style.color="red";
+                	}
 		}
-
 	</script>
-
 </body>
 </html>
